@@ -299,8 +299,8 @@ resource "aws_eks_access_policy_association" "this" {
 ################################################################################
 
 module "kms" {
-  source  = "terraform-aws-modules/kms/aws"
-  version = "2.1.0" # Note - be mindful of Terraform/provider version compatibility between modules
+  source  = "git::git@github.com:Gtsaas123/terraform-aws-kms.git"
+  #version = "2.1.0" # Note - be mindful of Terraform/provider version compatibility between modules
 
   create = local.create && var.create_kms_key && local.enable_cluster_encryption_config # not valid on Outposts
 
